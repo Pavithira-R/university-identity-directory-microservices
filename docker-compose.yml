@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  identity-service:
+    build:
+      context: ./backend/identity-service
+    ports:
+      - "8001:8001"
+    environment:
+      - DATABASE_URL=sqlite:///./identity.db
+      - PORT=8001
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8001/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  directory-service:
+    build:
+      context: ./backend/directory-service
+    ports:
+      - "8002:8002"
+    environment:
+      - DATABASE_URL=sqlite:///./directory.db
+      - PORT=8002
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8002/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
