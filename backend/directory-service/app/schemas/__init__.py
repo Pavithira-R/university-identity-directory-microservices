@@ -16,6 +16,19 @@ from app.schemas.service_unit import (
     ServiceUnitSingleResponse,
     ServiceUnitListResponse
 )
+from app.schemas.department_validation import (
+    DepartmentValidationData,
+    DepartmentValidationResponse
+)
+from app.schemas.service_unit_validation import (
+    ServiceUnitValidationData,
+    ServiceUnitValidationResponse
+)
+from app.schemas.responsibility_validation import (
+    ResponsibilityRecordData,
+    UserResponsibilityValidationData,
+    UserResponsibilityValidationResponse
+)
 
 __all__ = [
     "FacultyValidationData",
@@ -32,4 +45,11 @@ __all__ = [
     "ServiceUnitResponse",
     "ServiceUnitSingleResponse",
     "ServiceUnitListResponse",
+    "DepartmentValidationData",
+    "DepartmentValidationResponse",
+    "ServiceUnitValidationData",
+    "ServiceUnitValidationResponse",
+    "ResponsibilityRecordData",
+    "UserResponsibilityValidationData",
+    "UserResponsibilityValidationResponse",
 ]
